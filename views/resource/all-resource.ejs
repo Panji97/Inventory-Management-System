@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('../partials/head-table.ejs')%>
+
+  <body data-topbar="dark">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      <%-include('../partials/navbar.ejs')%>
+      <!-- ========== Left Sidebar Start ========== -->
+      <%-include('../partials/sidebar.ejs')%>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-sm-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Resource</h4>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-12">
+                <%-include('../partials/message.ejs')%>
+                <div class="card">
+                  <div class="card-body">
+                    <table
+                      id="datatable"
+                      class="table table-bordered dt-responsive nowrap"
+                      style="
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        width: 100%;
+                      "
+                    >
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Huawei ID</th>
+                          <th>DGE ID</th>
+                          <th>Mobile</th>
+                          <th>Email</th>
+                          <th>Address</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <% for(let i = 0 ; i < resource.length ; i++){%>
+                        <tr>
+                          <td><%= resource[i].resource_name %></td>
+                          <td><%= resource[i].resource_id_huawei %></td>
+                          <td><%= resource[i].resource_id_dge %></td>
+                          <td><%= resource[i].resource_mobile %></td>
+                          <td><%= resource[i].resource_email %></td>
+                          <td><%= resource[i].resource_address %></td>
+                          <td>
+                            <a
+                              href="/resource-edit-<%= resource[i]._id %>"
+                              class="btn btn-info sm"
+                              title="Edit Data"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+          </div>
+        </div>
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <%-include('../partials/js-table.ejs')%>
+  </body>
+</html>

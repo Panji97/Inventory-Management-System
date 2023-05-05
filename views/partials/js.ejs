@@ -1,0 +1,39 @@
+<!-- JAVASCRIPT -->
+<script src="libs/jquery/jquery.min.js"></script>
+<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="libs/metismenu/metisMenu.min.js"></script>
+<script src="libs/simplebar/simplebar.min.js"></script>
+<script src="libs/node-waves/waves.min.js"></script>
+
+<!-- apexcharts -->
+<script src="libs/apexcharts/apexcharts.min.js"></script>
+
+<!-- jquery.vectormap map -->
+<script src="libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
+
+<!-- Required datatable js -->
+<script src="libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- Responsive examples -->
+<script src="libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+<script src="js/pages/dashboard.init.js"></script>
+
+<!-- App js -->
+<script src="js/app.js"></script>
+
+<script>
+  const logout = document.getElementById("logout");
+
+  try {
+    logout.addEventListener("click", async () => {
+      const res = await fetch("/logout");
+      if ((res.data.status = "success")) location.assign("/");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+</script>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('../partials/head.ejs')%>
+
+  <body data-topbar="dark">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      <%-include('../partials/navbar.ejs')%>
+      <!-- ========== Left Sidebar Start ========== -->
+      <%-include('../partials/sidebar.ejs')%>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-sm-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Resource Add</h4>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="card">
+                <div class="card-body">
+                  <form
+                    class="needs-validation"
+                    novalidate
+                    method="post"
+                    action="/resource-create"
+                  >
+                    <div class="row">
+                      <div class="mb-3">
+                        <label for="resource_name" class="form-label"
+                          >Resource Name</label
+                        >
+                        <input
+                          type="text"
+                          name="resource_name"
+                          id="resource_name"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="resource_id_huawei" class="form-label"
+                            >Resource Huawei ID</label
+                          >
+                          <input
+                            type="text"
+                            name="resource_id_huawei"
+                            id="resource_id_huawei"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="resource_id_dge" class="form-label"
+                            >Resource DGE ID</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="resource_id_dge"
+                            name="resource_id_dge"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="resource_position" class="form-label"
+                            >Resource Position</label
+                          >
+                          <input
+                            type="text"
+                            name="resource_position"
+                            id="resource_position"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="resource_departement" class="form-label"
+                            >Resource Departement</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="resource_departement"
+                            name="resource_departement"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="resource_join_date" class="form-label"
+                            >Resource Join Date</label
+                          >
+                          <input
+                            type="date"
+                            name="resource_join_date"
+                            id="resource_join_date"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="resource_end_date" class="form-label"
+                            >Resource End Date</label
+                          >
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="resource_end_date"
+                            name="resource_end_date"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label for="resource_pic" class="form-label"
+                            >Resource PIC</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="resource_pic"
+                            name="resource_pic"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label for="resource_email" class="form-label"
+                            >Resource Email</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="resource_email"
+                            name="resource_email"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label for="resource_address" class="form-label"
+                            >Resource Address</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="resource_address"
+                            name="resource_address"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label for="resource_mobile" class="form-label"
+                            >Resource Mobile</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="resource_mobile"
+                            name="resource_mobile"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <button class="btn btn-primary" type="submit">
+                        Add Data
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <!-- end col -->
+            </div>
+          </div>
+        </div>
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <%-include('../partials/js.ejs')%>
+  </body>
+</html>

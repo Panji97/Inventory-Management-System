@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('../partials/head-table.ejs')%>
+
+  <body data-topbar="dark">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      <%-include('../partials/navbar.ejs')%>
+      <!-- ========== Left Sidebar Start ========== -->
+      <%-include('../partials/sidebar.ejs')%>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-sm-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Unit</h4>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <table
+                      id="datatable"
+                      class="table table-bordered dt-responsive nowrap"
+                      style="
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        width: 100%;
+                      "
+                    >
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Username</th>
+                          <th>Email</th>
+                          <th>Role</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <% for(let i = 0 ; i < user.length ; i++){%>
+                        <tr>
+                          <td><%= user[i]._id %></td>
+                          <td><%= user[i].username %></td>
+                          <td><%= user[i].email %></td>
+                          <td><%= user[i].role %></td>
+                          <td>
+                            <a
+                              href="/user-edit-<%=user[i]._id%>"
+                              class="btn btn-info sm"
+                              title="Edit Data"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+
+                            <% if (user[i].role === !"admin") { %> <% } %>
+                            <a
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                            >
+                              <i class="fas fa-trash"></i>
+                            </a>
+
+                            <div
+                              class="modal fade"
+                              id="exampleModal"
+                              tabindex="-1"
+                              aria-labelledby="exampleModalLabel"
+                              aria-hidden="true"
+                            >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1
+                                      class="modal-title fs-5"
+                                      id="exampleModalLabel"
+                                    >
+                                      Delete this data?
+                                    </h1>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <a
+                                      type="button"
+                                      class="btn btn-danger"
+                                      href="/user-delete-<%= user[i]._id %>"
+                                    >
+                                      Delete
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+          </div>
+        </div>
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <%-include('../partials/js-table.ejs')%>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('./partials/head.ejs')%>
+
+  <body data-topbar="dark">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      <%-include('./partials/navbar.ejs')%>
+      <!-- ========== Left Sidebar Start ========== -->
+      <%-include('./partials/sidebar.ejs')%>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-sm-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Dashboard</h4>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-xl-3 col-md-6">
+                <a class="card" href="/unit-all">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <div class="flex-grow-1">
+                        <p class="text-truncate font-size-14 mb-2">
+                          Total DGE Asset
+                        </p>
+                        <h4 class="mb-2"><%=dgeAsset%></h4>
+                      </div>
+                      <div class="avatar-sm">
+                        <span
+                          class="avatar-title bg-light text-primary rounded-3"
+                        >
+                          <i class="fas fa-laptop font-size-20"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end cardbody -->
+                </a>
+                <!-- end card -->
+              </div>
+              <!-- end col -->
+              <div class="col-xl-3 col-md-6">
+                <a class="card" href="/unit-all">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <div class="flex-grow-1">
+                        <p class="text-truncate font-size-14 mb-2">
+                          Total Personal Asset
+                        </p>
+                        <h4 class="mb-2"><%=personalAsset%></h4>
+                      </div>
+                      <div class="avatar-sm">
+                        <span
+                          class="avatar-title bg-light text-success rounded-3"
+                        >
+                          <i class="fas fa-person-booth font-size-20"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end cardbody -->
+                </a>
+                <!-- end card -->
+              </div>
+              <!-- end col -->
+              <div class="col-xl-3 col-md-6">
+                <a class="card" href="/unit-all">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <div class="flex-grow-1">
+                        <p class="text-truncate font-size-14 mb-2">
+                          Total Assets
+                        </p>
+                        <h4 class="mb-2"><%=unit.length%></h4>
+                      </div>
+                      <div class="avatar-sm">
+                        <span
+                          class="avatar-title bg-light text-primary rounded-3"
+                        >
+                          <i class="fas fa-qrcode font-size-20"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end cardbody -->
+                </a>
+                <!-- end card -->
+              </div>
+              <!-- end col -->
+              <div class="col-xl-3 col-md-6">
+                <a class="card" href="/resource-all">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <div class="flex-grow-1">
+                        <p class="text-truncate font-size-14 mb-2">
+                          Total Resource
+                        </p>
+                        <h4 class="mb-2"><%=resource.length%></h4>
+                      </div>
+                      <div class="avatar-sm">
+                        <span
+                          class="avatar-title bg-light text-success rounded-3"
+                        >
+                          <i class="fas fa-user-friends font-size-20"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end cardbody -->
+                </a>
+                <!-- end card -->
+              </div>
+              <!-- end col -->
+            </div>
+
+            <!-- end row -->
+          </div>
+        </div>
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <%-include('./partials/js.ejs')%>
+  </body>
+</html>

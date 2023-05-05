@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('../partials/head-table.ejs')%>
+
+  <body data-topbar="dark">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      <%-include('../partials/navbar.ejs')%>
+      <!-- ========== Left Sidebar Start ========== -->
+      <%-include('../partials/sidebar.ejs')%>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-sm-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Unit</h4>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-12">
+                <%-include('../partials/message.ejs')%>
+                <div class="card">
+                  <div class="card-body">
+                    <table
+                      id="datatable"
+                      class="table table-bordered dt-responsive nowrap"
+                      style="
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        width: 100%;
+                      "
+                    >
+                      <thead>
+                        <tr>
+                          <th>Serial Number</th>
+                          <th>User</th>
+                          <th>Unit Status</th>
+                          <th>Supplier Name</th>
+                          <th>Date In</th>
+                          <th>Date Use</th>
+                          <th>Date Out</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <% for(let i = 0 ; i < unit.length ; i++){%>
+                        <tr>
+                          <td><%= unit[i].unit_serial_number %></td>
+                          <td><%= unit[i].resource_name %></td>
+                          <td><%= unit[i].unit_asset_status %></td>
+                          <td><%= unit[i].supplier_name %></td>
+                          <td><%=unit[i].unit_date_in%></td>
+                          <td><%=unit[i].unit_date_use%></td>
+                          <td><%=unit[i].unit_date_out%></td>
+                          <td>
+                            <a
+                              href="/unit-edit-<%= unit[i]._id %>"
+                              class="btn btn-info sm"
+                              title="Edit Data"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+          </div>
+        </div>
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <%-include('../partials/js-table.ejs')%>
+  </body>
+</html>
