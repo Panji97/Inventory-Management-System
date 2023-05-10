@@ -33,49 +33,60 @@
             <div class="row">
               <div class="col-12">
                 <%-include('../partials/message.ejs')%>
-                <div class="card">
-                  <div class="card-body">
-                    <table
-                      id="datatable"
-                      class="table table-bordered dt-responsive nowrap"
-                      style="
-                        border-collapse: collapse;
-                        border-spacing: 0;
-                        width: 100%;
-                      "
+                <div style="background-color: white">
+                  <div style="padding-left: 1rem; padding-top: 1rem">
+                    <a
+                      href="/supplier-add"
+                      type="button"
+                      class="btn btn-primary"
                     >
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>PIC</th>
-                          <th>Mobile</th>
-                          <th>Email</th>
-                          <th>Address</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
+                      Add Supplier
+                    </a>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <table
+                        id="datatable"
+                        class="table table-bordered dt-responsive nowrap"
+                        style="
+                          border-collapse: collapse;
+                          border-spacing: 0;
+                          width: 100%;
+                        "
+                      >
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>PIC</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
 
-                      <tbody>
-                        <% for(let i = 0 ; i < supplier.length ; i++){%>
-                        <tr>
-                          <td><%= supplier[i].supplier_name %></td>
-                          <td><%= supplier[i].supplier_pic %></td>
-                          <td><%= supplier[i].supplier_mobile %></td>
-                          <td><%= supplier[i].supplier_email %></td>
-                          <td><%= supplier[i].supplier_address %></td>
-                          <td>
-                            <a
-                              href="/supplier-edit-<%= supplier[i]._id %>"
-                              class="btn btn-info sm"
-                              title="Edit Data"
-                            >
-                              <i class="fas fa-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <% } %>
-                      </tbody>
-                    </table>
+                        <tbody>
+                          <% for(let i = 0 ; i < supplier.length ; i++){%>
+                          <tr>
+                            <td><%= supplier[i].supplier_name %></td>
+                            <td><%= supplier[i].supplier_pic %></td>
+                            <td><%= supplier[i].supplier_mobile %></td>
+                            <td><%= supplier[i].supplier_email %></td>
+                            <td><%= supplier[i].supplier_address %></td>
+                            <td>
+                              <a
+                                href="/supplier-edit-<%= supplier[i]._id %>"
+                                class="btn btn-info sm"
+                                title="Edit Data"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <% } %>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>

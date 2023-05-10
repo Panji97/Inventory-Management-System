@@ -33,53 +33,60 @@
             <div class="row">
               <div class="col-12">
                 <%-include('../partials/message.ejs')%>
-                <div class="card">
-                  <div class="card-body">
-                    <table
-                      id="datatable"
-                      class="table table-bordered dt-responsive nowrap"
-                      style="
-                        border-collapse: collapse;
-                        border-spacing: 0;
-                        width: 100%;
-                      "
-                    >
-                      <thead>
-                        <tr>
-                          <th>Serial Number</th>
-                          <th>User</th>
-                          <th>Unit Status</th>
-                          <th>Supplier Name</th>
-                          <th>Date In</th>
-                          <th>Date Use</th>
-                          <th>Date Out</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
+                <div style="background-color: white">
+                  <div style="padding-left: 1rem; padding-top: 1rem">
+                    <a href="/unit-add" type="button" class="btn btn-primary">
+                      Add Unit
+                    </a>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <table
+                        id="datatable"
+                        class="table table-bordered dt-responsive nowrap"
+                        style="
+                          border-collapse: collapse;
+                          border-spacing: 0;
+                          width: 100%;
+                        "
+                      >
+                        <thead>
+                          <tr>
+                            <th>Serial Number</th>
+                            <th>User</th>
+                            <th>Unit Status</th>
+                            <th>Supplier Name</th>
+                            <th>Date In</th>
+                            <th>Date Use</th>
+                            <th>Date Out</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
 
-                      <tbody>
-                        <% for(let i = 0 ; i < unit.length ; i++){%>
-                        <tr>
-                          <td><%= unit[i].unit_serial_number %></td>
-                          <td><%= unit[i].resource_name %></td>
-                          <td><%= unit[i].unit_asset_status %></td>
-                          <td><%= unit[i].supplier_name %></td>
-                          <td><%=unit[i].unit_date_in%></td>
-                          <td><%=unit[i].unit_date_use%></td>
-                          <td><%=unit[i].unit_date_out%></td>
-                          <td>
-                            <a
-                              href="/unit-edit-<%= unit[i]._id %>"
-                              class="btn btn-info sm"
-                              title="Edit Data"
-                            >
-                              <i class="fas fa-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <% } %>
-                      </tbody>
-                    </table>
+                        <tbody>
+                          <% for(let i = 0 ; i < unit.length ; i++){%>
+                          <tr>
+                            <td><%= unit[i].unit_serial_number %></td>
+                            <td><%= unit[i].resource_name %></td>
+                            <td><%= unit[i].unit_asset_status %></td>
+                            <td><%= unit[i].supplier_name %></td>
+                            <td><%=unit[i].unit_date_in%></td>
+                            <td><%=unit[i].unit_date_use%></td>
+                            <td><%=unit[i].unit_date_out%></td>
+                            <td>
+                              <a
+                                href="/unit-edit-<%= unit[i]._id %>"
+                                class="btn btn-info sm"
+                                title="Edit Data"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <% } %>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
